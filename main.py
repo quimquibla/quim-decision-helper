@@ -1,3 +1,6 @@
+
+# Aplicación interactiva de QuimDecisionHelper con interfaz web y soporte PWA
+
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
 import random
@@ -80,12 +83,12 @@ def root():
     </head>
     <body style='font-family:Arial;padding:20px;'>
         <h1>Asistente Ético: Quim</h1>
-        <form action="/quim/decide" method="post" onsubmit="handleSubmit(event)">
+        <form onsubmit="handleSubmit(event)">
             <label for="question">Escribe tu pregunta o dilema:</label><br><br>
             <textarea id="question" name="question" rows="5" cols="60"></textarea><br><br>
             <input type="submit" value="Consultar a Quim">
         </form>
-        <div id="respuesta" style="margin-top:20px;'></div>
+        <div id="respuesta" style="margin-top:20px;"></div>
         <script>
         async function handleSubmit(event) {
             event.preventDefault();
